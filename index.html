@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery List</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
+    <link href='http://fonts.googleapis.com/css?family=Qwigley|Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="//code.jquery.com/jquery.min.js"></script> -->
+</head>
+<body>
+<header>
+    <h1>Grocery List</h1>
+</header>
+
+<section class="content flex-container">
+    <!-- form to create a new list -->
+    <div class="create-list">
+    <form id="new-list" name="new-list">
+    <input type="text" id="list-name" name="list-name" placeholder="New List, Produce, Dairy, Bakery…">
+    <button><i class="fa fa-plus"></i></button>
+    </form>
+    </div>
+    <!-- new list -->
+    <div class="list">
+        <div class="list-header">
+            <h2>My List <i class="fa fa-times-circle"></i></h2>
+        </div>
+        <div class="row">
+            <p><i class="fa fa-square-o"></i> Apples <i class="fa fa-times-circle"></i></p>
+        </div>
+        <div class="row">
+            <p><i class="fa fa-square-o"></i> Carrots <i class="fa fa-times-circle"></i></p>
+        </div>
+        <div class="row completed">
+            <p><i class="fa fa-check-square-o"></i> Bananas <i class="fa fa-times-circle"></i></p>
+        </div>
+    </div>
+    <button class="clear-lists">Clear Lists</button>
+</section>
+
+<footer></footer>
+</body>
+</html>
