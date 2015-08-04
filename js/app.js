@@ -2,24 +2,50 @@
  * Created by bc on 8/1/15.
  */
 $(document).ready(function() {
-/* HTML for a new list*/
-    /* var newList1 = $("<div class='list'><div class='list-header'><div class='title'>");
-    var newList2 = $("</div><i class='fa fa-times-circle'></i></div><div class='row'><p><i class='fa fa-square-o'></i> Apples <i class='fa fa-times-circle'></i></p></div></div>"); */
-
-/* Function to create and name new list */
-    $('.add').click(function(event) {
+/*/ Function to create and name a new list */
+    function newList() {
         var txtbox = document.getElementById('list-name');
         var txtval = txtbox.value;
         console.log(txtval);
-        $(".list-holder").append("<div class='list'><div class='list-header'><div class='title'>Header</div></div></div>");
+        $(".list-holder").append("<div class='list'>" +
+            "<div class='list-header'>" +
+            "<div class='title'>" +
+            txtval +
+            "</div><i class='fa fa-times-circle'></i></div>"+
+                "<div class='item-holder'>"+
+            "<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>" +
+                "</div>"+
+            "</div>");
         event.preventDefault();
         document.getElementById('list-name').value = '';
+    }
+
+ /* Function to add another item */
+    function newItem() {
+        var itemtxt = document.getElementById('item');
+        var itemval = itemtxt.value;
+        console.log(itemtxt);
+        console.log("newItem function is working");
+        $('.item-holder').append("<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>");
+    }
+
+/* Event to create and name new list */
+    $('.add').click(newList);
+    $('#list-name').keydown(function(event) {
+        if(event.which == 13) {
+        $(newList);
+        }
     });
 
-/* Function to clear lists */
+/* Add items to a list */
+    $('#item').keydown(function(event) {
+        if(event.which == 13) {
+            console.log("keydown is working");
+            $(newItem);
+        }
+    });
+/* Clear lists */
     $('.clear').click(function(){
         $('.list').hide();
     });
 });
-
-
