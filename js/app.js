@@ -12,9 +12,7 @@ $(document).ready(function() {
             "<div class='title'>" +
             txtval +
             "</div><i class='fa fa-times-circle'></i></div>"+
-                "<div class='item-holder'>"+
             "<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>" +
-                "</div>"+
             "</div>");
         event.preventDefault();
         document.getElementById('list-name').value = '';
@@ -26,7 +24,7 @@ $(document).ready(function() {
         var itemval = itemtxt.value;
         console.log(itemtxt);
         console.log("newItem function is working");
-        $('.item-holder').append("<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>");
+        $('list').append("<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>");
     }
 
 /* Event to create and name new list */
@@ -38,9 +36,9 @@ $(document).ready(function() {
     });
 
 /* Add items to a list */
-    $('#item').keydown(function(event) {
+    $(document).on( "keyup", "#item", function(event) {
         if(event.which == 13) {
-            console.log("keydown is working");
+            console.log("keyup is working");
             $(newItem);
         }
     });
