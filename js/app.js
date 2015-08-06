@@ -24,7 +24,7 @@ $(document).ready(function() {
         var itemval = itemtxt.value;
         console.log(itemtxt);
         console.log("newItem function is working");
-        $('list').append("<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>");
+        $('.list').append("<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>");
     }
 
 /* Event to create and name new list */
@@ -39,7 +39,7 @@ $(document).ready(function() {
     $(document).on( "keyup", "#item", function(event) {
         if(event.which == 13) {
             console.log("keyup is working");
-            $(newItem);
+            $.proxy(newItem,'.list');
         }
     });
 /* Clear lists */
