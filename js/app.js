@@ -18,15 +18,6 @@ $(document).ready(function() {
         document.getElementById('list-name').value = '';
     }
 
- /* Function to add another item */
-    function newItem() {
-        var itemtxt = document.getElementById('item');
-        var itemval = itemtxt.value;
-        console.log(itemtxt);
-        console.log("newItem function is working");
-        $('.list').append("<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>");
-    }
-
 /* Event to create and name new list */
     $('.add').click(newList);
     $('#list-name').keydown(function(event) {
@@ -36,10 +27,11 @@ $(document).ready(function() {
     });
 
 /* Add items to a list */
-    $(document).on( "keyup", "#item", function(event) {
+    $(document).on( "keyup", ("#item"), function(event) {
         if(event.which == 13) {
             console.log("keyup is working");
-            $.proxy(newItem,'.list');
+            $(this).closest('.list').append("<div class='row'><p><i class='fa fa-square-o'></i> <input id='item' placeholder='Enter item name…'> <i class='fa fa-times-circle'></i></p></div>");
+            event.preventDefault();
         }
     });
 /* Clear lists */
