@@ -58,7 +58,7 @@ $(document).ready(function() {
     });
 });
 
-/* Cross off items */
+/* Cross off items - click event is working, but add/removeClass do not */
 $(document).on ( "click", ".check-box", function(event) {
     console.log("click is working");
     $(this).removeClass(".fa-square-o").addClass(".fa-check-square-o");
