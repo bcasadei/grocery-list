@@ -142,12 +142,27 @@ header > h1 {
     color: #8c8c8c;
     line-height: 2.5rem;
 }
-.row > p > i.fa-times-circle {
+.row > p > i.add-item {
     float: right;
     line-height: 2.5rem;
+    color: #cccccc;
+}
+.row > p > i.add-item:hover {
+    color: #999999;
+}
+.row > p > i.add-item:active {
+    color: #cccccc;
+}
+.row > #item {
+    background: transparent;
+    border: none;
 }
 .completed {
     background-color: #cccccc;
+}
+.done {
+    text-decoration: line-through;
+    color: #999999;
 }
 button.clear {
     height: 2.5rem;
