@@ -138,19 +138,38 @@ header > h1 {
     padding: 0 1.5rem 0 1.5rem;
     border-bottom: 1px solid #cccccc;
 }
-.row > p {
+.row {
     color: #8c8c8c;
     line-height: 2.5rem;
 }
-.row > p > i.add-item {
-    float: right;
-    line-height: 2.5rem;
-    color: #cccccc;
+.row > div, i {
+    display: inline-block;
 }
-.row > p > i.add-item:hover {
+.row > i.check-box {
+    margin-right: .5rem;
+    line-height: 2.5rem;
+}
+.row > i.add-item {
+    float: right;
+    color: #cccccc;
+    line-height: 2.5rem;
+}
+.row > i.add-item:hover {
     color: #999999;
 }
-.row > p > i.add-item:active {
+.row > i.add-item:active {
+    color: #cccccc;
+}
+.row > i.delete-item {
+    float: right;
+    color: #cccccc;
+    line-height: 2.5rem;
+    display: none;
+}
+.row > i.delete-item:hover {
+    color: #999999;
+}
+.row > i.delete-item:active {
     color: #cccccc;
 }
 .row > #item {
