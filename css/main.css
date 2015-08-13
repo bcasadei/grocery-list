@@ -129,9 +129,15 @@ header > h1 {
 .list-header > i {
     float: right;
     line-height: 2.5rem;
-    color: #ffffff;
+    color: #cccccc;
     margin: 0;
     display: inline-block;
+}
+.list-header > i:hover {
+    color: #ffffff;
+}
+.list-header > i:active {
+    color: #cccccc;
 }
 .row {
     width: 100%;
@@ -162,7 +168,7 @@ header > h1 {
 }
 .row > i.delete-item {
     float: right;
-    color: #cccccc;
+    color: #999999;
     line-height: 2.5rem;
     display: none;
 }

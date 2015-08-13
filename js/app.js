@@ -4,17 +4,30 @@
 $(document).ready(function() {
     /*/ Function to create and name a new list */
     function newList() {
-        var txtval = $('#list-name').val();
+        var txtval = $('#list-name').val().trim();
         console.log(txtval);
-        $(".list-holder").append("<div class='list'>" +
-            "<div class='list-header'>" +
-            "<div class='title'>" +
-            txtval +
-            "</div><i class='fa fa-times-circle'></i></div>"+
-            "<div class='row'> <input id='item' placeholder='Enter item name…'> <i class='add-item fa fa-plus-square-o fa-2x'></i></div>" +
-            "</div>");
-        event.preventDefault();
-        $('#list-name').val("");
+        if(txtval != "") {
+            $(".list-holder").append("<div class='list'>" +
+                "<div class='list-header'>" +
+                "<div class='title'>" +
+                txtval +
+                "</div><i class='fa fa-times-circle'></i></div>" +
+                "<div class='row'> <input id='item' placeholder='Enter item name…'> <i class='add-item fa fa-plus-square-o fa-2x'></i></div>" +
+                "</div>");
+            event.preventDefault();
+            $('#list-name').val("");
+        }
+        else{
+            $(".list-holder").append("<div class='list'>" +
+                "<div class='list-header'>" +
+                "<div class='title'>" +
+                "My List" +
+                "</div><i class='fa fa-times-circle'></i></div>" +
+                "<div class='row'> <input id='item' placeholder='Enter item name…'> <i class='add-item fa fa-plus-square-o fa-2x'></i></div>" +
+                "</div>");
+            event.preventDefault();
+            $('#list-name').val("");
+        }
     }
 
     /* Event to create and name new list */
@@ -71,12 +84,12 @@ $(document).ready(function() {
             // Gray out row
             $(this).closest(".row").toggleClass("completed");
             // line-through text
-            $(this).siblings( ).toggleClass("done");
+            $(this).next("div").toggleClass("done");
         }
         else {
             $(this).closest(".check-box").removeClass("fa-check-square-o").addClass("fa-square-o");
             $(this).closest(".row").toggleClass("completed");
-            $(this).siblings( ).toggleClass("done");
+            $(this).next("div").toggleClass("done");
         }
 
     })
